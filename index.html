@@ -22,9 +22,7 @@
             -webkit-font-smoothing: antialiased;
             padding: 10px;
         }
-        ﻿/**
- * YAKUZA MANGA â Estilos del Radar de Pausas de PublicaciÃ³n (DiseÃ±o Compacto y Optimizado)
- */
+        ﻿
 
 .ykz-radar-container {
 	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -42,9 +40,7 @@
 	z-index: 1;
 }
 
-/* =========================================================
-   1. HERO HEADER Y STATS (COMPACTO)
-========================================================= */
+
 .ykz-radar-header {
 	text-align: center;
 	margin-bottom: 16px;
@@ -160,9 +156,7 @@
 .stat-pausas .ykz-stat-num { color: #dc2626; }
 .stat-finalizadas .ykz-stat-num { color: #2563eb; }
 
-/* =========================================================
-   2. CONTROLES Y FILTROS (COMPACTO)
-========================================================= */
+
 .ykz-radar-toolbar {
 	background: #ffffff;
 	border: 1px solid #e5e7eb;
@@ -340,9 +334,7 @@
 	padding: 0 2px;
 }
 
-/* =========================================================
-   3. CUADRÃCULA DE TARJETAS DE SERIES (COMPACTO)
-========================================================= */
+
 .ykz-radar-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -367,7 +359,7 @@
 	border-color: #d1d5db;
 }
 
-/* Indicador superior de tipo de estado */
+
 .ykz-card-banner {
 	padding: 5px 10px;
 	font-size: 0.68rem;
@@ -409,7 +401,7 @@
 	border-bottom: 1px solid #dbeafe;
 }
 
-/* Pulso animado para pausas y lanzamientos */
+
 .ykz-pulse-dot {
 	width: 6px;
 	height: 6px;
@@ -425,7 +417,7 @@
 	100% { opacity: 1; transform: scale(1); }
 }
 
-/* Contenido Principal de la Tarjeta */
+
 .ykz-card-body {
 	padding: 10px 12px;
 	display: flex;
@@ -455,7 +447,7 @@
 	display: block;
 }
 
-/* Placeholder elegante cuando no hay imagen o falla */
+
 .ykz-cover-placeholder {
 	width: 100%;
 	height: 100%;
@@ -515,7 +507,7 @@
 	overflow: hidden;
 }
 
-/* MÃ©tricas destacadas de Tiempo / Contador */
+
 .ykz-card-meter {
 	margin-top: auto;
 	padding: 5px 8px;
@@ -559,7 +551,7 @@
 	line-height: 1.25;
 }
 
-/* Detalle inferior de la tarjeta */
+
 .ykz-card-footer {
 	padding: 8px 12px;
 	background: #fafafa;
@@ -590,7 +582,7 @@
 	line-height: 1.35;
 }
 
-/* BotÃ³n de AcciÃ³n */
+
 .ykz-card-btn {
 	display: flex;
 	align-items: center;
@@ -642,9 +634,7 @@
 	transform: translateY(-1px);
 }
 
-/* =========================================================
-   4. CARGAR MÃS Y EMPTY STATE
-========================================================= */
+
 .ykz-radar-load-more-wrap {
 	text-align: center;
 	margin-top: 22px;
@@ -710,9 +700,7 @@
 	font-family: inherit;
 }
 
-/* =========================================================
-   5. GUÃA Y TUTORIAL DE USO (LISTA LIMPIA SIN CAJAS)
-========================================================= */
+
 .ykz-radar-guide {
 	margin-top: 48px;
 	padding-top: 36px;
@@ -735,7 +723,7 @@
 }
 
 .ykz-guide-item {
-	/* Sin cajas, sin fondos, sin bordes de tarjeta */
+	
 }
 
 .ykz-guide-item-title {
@@ -774,9 +762,7 @@
 	color: #111827;
 }
 
-/* =========================================================
-   6. RESPONSIVE
-========================================================= */
+
 @media (max-width: 1024px) {
 	.ykz-radar-container {
 		padding-left: 85px;
@@ -23009,8 +22995,8 @@ window.ykzRadarData = {
 
 <!-- LÓGICA DE INTERACCIÓN -->
 <script>
-﻿/**
- * YAKUZA MANGA â LÃ³gica Interactiva del Radar de Pausas
+/**
+ * YAKUZA MANGA — Lógica Interactiva del Radar de Pausas (UTF-8 Clean)
  */
 
 (function () {
@@ -23042,7 +23028,7 @@ window.ykzRadarData = {
 	const resetBtn = document.getElementById('ykzRadarResetBtn');
 
 	/**
-	 * Formatea una cantidad de dÃ­as en un texto legible (aÃ±os, meses y dÃ­as).
+	 * Formatea una cantidad de días en un texto legible (años, meses y días).
 	 */
 	function formatRelativeDays(days) {
 		if (days === null || typeof days === 'undefined' || isNaN(days)) {
@@ -23052,10 +23038,10 @@ window.ykzRadarData = {
 			return 'Hoy';
 		}
 		if (days === 1) {
-			return 'Hace 1 dÃ­a';
+			return 'Hace 1 día';
 		}
 		if (days < 30) {
-			return `Hace ${days} dÃ­as`;
+			return `Hace ${days} días`;
 		}
 
 		const years = Math.floor(days / 365);
@@ -23064,20 +23050,20 @@ window.ykzRadarData = {
 
 		const parts = [];
 		if (years > 0) {
-			parts.push(`${years} ${years === 1 ? 'aÃ±o' : 'aÃ±os'}`);
+			parts.push(`${years} ${years === 1 ? 'año' : 'años'}`);
 		}
 		if (months > 0) {
 			parts.push(`${months} ${months === 1 ? 'mes' : 'meses'}`);
 		}
 		if (years === 0 && months === 0) {
-			return `Hace ${days} dÃ­as`;
+			return `Hace ${days} días`;
 		}
 
 		return `Hace ${parts.join(' y ')}`;
 	}
 
 	/**
-	 * Normaliza una cadena para bÃºsquedas (quita acentos, minÃºsculas).
+	 * Normaliza una cadena para búsquedas (quita acentos, minúsculas).
 	 */
 	function normalizeStr(str) {
 		return (str || '')
@@ -23089,13 +23075,13 @@ window.ykzRadarData = {
 	}
 
 	/**
-	 * Aplica los filtros de bÃºsqueda, pestaÃ±as y editorial.
+	 * Aplica los filtros de búsqueda, pestañas y editorial.
 	 */
 	function applyFilters() {
 		const normQuery = normalizeStr(searchQuery);
 
 		filteredSeries = allSeries.filter((item) => {
-			// 1. Filtro de bÃºsqueda
+			// 1. Filtro de búsqueda
 			if (normQuery) {
 				const matchTitle = normalizeStr(item.titulo).includes(normQuery);
 				const matchSlug = normalizeStr(item.slug).includes(normQuery);
@@ -23110,7 +23096,7 @@ window.ykzRadarData = {
 				return false;
 			}
 
-			// 3. Filtro de PestaÃ±a / Estado
+			// 3. Filtro de Pestaña / Estado
 			if (currentFilter === 'proximo') {
 				return Boolean(item.proximo_lanzamiento);
 			}
@@ -23129,10 +23115,10 @@ window.ykzRadarData = {
 
 		// Actualizar contador
 		if (resultsCountEl) {
-			resultsCountEl.textContent = `Mostrando ${filteredSeries.length.toLocaleString()} series`;
+			resultsCountEl.textContent = `Mostrando ${filteredSeries.length.toLocaleString('es-ES')} series`;
 		}
 
-		// Resetear paginaciÃ³n
+		// Resetear paginación
 		displayedCount = 0;
 		if (gridEl) {
 			gridEl.innerHTML = '';
@@ -23148,7 +23134,7 @@ window.ykzRadarData = {
 	}
 
 	/**
-	 * Renderiza la siguiente pÃ¡gina de tarjetas.
+	 * Renderiza la siguiente página de tarjetas.
 	 */
 	function renderNextPage() {
 		const nextItems = filteredSeries.slice(displayedCount, displayedCount + PAGE_SIZE);
@@ -23190,17 +23176,17 @@ window.ykzRadarData = {
 		const isPausa = item.estado === 'pausa_autor' || item.estado === 'pausa_editorial';
 		const isEspera = item.estado === 'en_espera' || item.estado === 'en_publicacion_lenta';
 
-		// 1. ConfiguraciÃ³n segÃºn Estado
+		// 1. Configuración según Estado
 		if (hasProximo) {
 			const prox = item.proximo_lanzamiento;
 			const isConfirmado = prox.tipo === 'confirmado' || (prox.url && prox.url.includes('/manga/'));
 			const diasFaltan = prox.dias_faltantes;
 			let diasText = '';
 			if (typeof diasFaltan === 'number') {
-				diasText = diasFaltan > 0 ? `(Â¡Faltan ${diasFaltan} dÃ­as!)` : (diasFaltan === 0 ? '(Â¡Lanzamiento hoy!)' : '');
+				diasText = diasFaltan > 0 ? `(¡Faltan ${diasFaltan} días!)` : (diasFaltan === 0 ? '(¡Lanzamiento hoy!)' : '');
 			}
 			
-			const badgeLabel = isConfirmado ? 'ð PrÃ³ximo Tomo Confirmado' : 'ð En PreparaciÃ³n Editorial';
+			const badgeLabel = isConfirmado ? '🚀 Próximo Tomo Confirmado' : '🚀 En Preparación Editorial';
 			bannerHtml = `
 				<div class="ykz-card-banner banner-proximo">
 					<span class="ykz-pulse-dot"></span> ${badgeLabel}
@@ -23209,12 +23195,12 @@ window.ykzRadarData = {
 			const fechaLabel = isConfirmado ? 'Salida oficial' : 'Previsto';
 			meterHtml = `
 				<div class="ykz-card-meter meter-proximo">
-					<span class="ykz-meter-value val-success">${escapeHtml(prox.tomo || 'PrÃ³ximo volumen')}</span>
+					<span class="ykz-meter-value val-success">${escapeHtml(prox.tomo || 'Próximo volumen')}</span>
 					<span class="ykz-meter-sub">${fechaLabel}: <strong>${escapeHtml(prox.fecha_display || prox.fecha)}</strong> ${diasText}</span>
 				</div>`;
 
 			const proxUrl = prox.url || item.url_tienda;
-			const btnLabel = isConfirmado ? 'ð Avisarme cuando salga' : 'ð Ver colecciÃ³n en tienda';
+			const btnLabel = isConfirmado ? '🔔 Avisarme cuando salga' : '📖 Ver colección en tienda';
 			const btnClass = isConfirmado ? 'btn-aviso' : 'btn-comprar';
 			btnHtml = `
 				<a href="${escapeHtml(proxUrl)}" class="ykz-card-btn ${btnClass}" target="_blank" rel="noopener">
@@ -23224,7 +23210,7 @@ window.ykzRadarData = {
 		} else if (isFinalizada) {
 			bannerHtml = `
 				<div class="ykz-card-banner banner-finalizada">
-					ð¢ ColecciÃ³n Completa / Cerrada
+					🟢 Colección Completa / Cerrada
 				</div>`;
 
 			meterHtml = `
@@ -23235,11 +23221,11 @@ window.ykzRadarData = {
 
 			btnHtml = `
 				<a href="${escapeHtml(item.url_tienda)}" class="ykz-card-btn btn-finalizada" target="_blank" rel="noopener">
-					ð Ver colecciÃ³n completa
+					📚 Ver colección completa
 				</a>`;
 
 		} else if (isPausa) {
-			const badgeLabel = item.estado === 'pausa_autor' ? 'ð¨ Hiatus Oficial del Autor' : 'â ï¸ Pausa Editorial en EspaÃ±a';
+			const badgeLabel = item.estado === 'pausa_autor' ? '🚨 Hiatus Oficial del Autor' : '⚠️ Pausa Editorial en España';
 			bannerHtml = `
 				<div class="ykz-card-banner banner-pausa">
 					<span class="ykz-pulse-dot"></span> ${badgeLabel}
@@ -23250,19 +23236,19 @@ window.ykzRadarData = {
 
 			meterHtml = `
 				<div class="ykz-card-meter meter-pausa">
-					<span class="ykz-meter-value val-danger">${diasSin.toLocaleString()} DÃAS SIN TOMO</span>
+					<span class="ykz-meter-value val-danger">${diasSin.toLocaleString('es-ES')} DÍAS SIN TOMO</span>
 					<span class="ykz-meter-sub">${relTime}</span>
 				</div>`;
 
 			btnHtml = `
 				<a href="${escapeHtml(item.url_tienda)}" class="ykz-card-btn btn-comprar" target="_blank" rel="noopener">
-					ð Ver tomos publicados
+					🛒 Ver tomos publicados
 				</a>`;
 
 		} else if (isEspera) {
 			bannerHtml = `
 				<div class="ykz-card-banner banner-espera">
-					â³ En Espera / Ritmo Lento
+					⏳ En Espera / Ritmo Lento
 				</div>`;
 
 			const diasSin = item.dias_sin_publicar || 0;
@@ -23270,20 +23256,20 @@ window.ykzRadarData = {
 
 			meterHtml = `
 				<div class="ykz-card-meter meter-pausa">
-					<span class="ykz-meter-value val-warning">${diasSin.toLocaleString()} DÃAS SIN TOMO</span>
+					<span class="ykz-meter-value val-warning">${diasSin.toLocaleString('es-ES')} DÍAS SIN TOMO</span>
 					<span class="ykz-meter-sub">${relTime}</span>
 				</div>`;
 
 			btnHtml = `
 				<a href="${escapeHtml(item.url_tienda)}" class="ykz-card-btn btn-comprar" target="_blank" rel="noopener">
-					ð Ver tomos publicados
+					🛒 Ver tomos publicados
 				</a>`;
 
 		} else {
-			// En publicaciÃ³n regular
+			// En publicación regular
 			bannerHtml = `
 				<div class="ykz-card-banner banner-activa">
-					ð En PublicaciÃ³n Regular
+					📖 En Publicación Regular
 				</div>`;
 
 			const diasSin = item.dias_sin_publicar || 0;
@@ -23291,18 +23277,18 @@ window.ykzRadarData = {
 
 			meterHtml = `
 				<div class="ykz-card-meter">
-					<span class="ykz-meter-value val-neutral">${diasSin ? `${diasSin} dÃ­as desde el Ãºltimo tomo` : 'Al dÃ­a'}</span>
-					<span class="ykz-meter-sub">${relTime || 'PublicaciÃ³n en curso'}</span>
+					<span class="ykz-meter-value val-neutral">${diasSin ? `${diasSin.toLocaleString('es-ES')} días desde el último tomo` : 'Al día'}</span>
+					<span class="ykz-meter-sub">${relTime || 'Publicación en curso'}</span>
 				</div>`;
 
 			btnHtml = `
 				<a href="${escapeHtml(item.url_tienda)}" class="ykz-card-btn btn-comprar" target="_blank" rel="noopener">
-					ð Ver catÃ¡logo de la serie
+					🛒 Ver catálogo de la serie
 				</a>`;
 		}
 
 		if (item.motivo) {
-			reasonHtml = `<div class="ykz-card-reason">â¹ï¸ ${escapeHtml(item.motivo)}</div>`;
+			reasonHtml = `<div class="ykz-card-reason">ℹ️ ${escapeHtml(item.motivo)}</div>`;
 		}
 
 		const coverSrc = item.portada_url || (item.proximo_lanzamiento && item.proximo_lanzamiento.img_url) || '';
@@ -23343,7 +23329,7 @@ window.ykzRadarData = {
 			</div>
 			<div class="ykz-card-footer">
 				<div class="ykz-card-info-row">
-					<strong>Ãltimo tomo en EspaÃ±a:</strong> ${escapeHtml(item.ultimo_tomo_nombre || 'En ediciÃ³n')} 
+					<strong>Último tomo en España:</strong> ${escapeHtml(item.ultimo_tomo_nombre || 'En edición')} 
 					${item.fecha_ultimo_tomo_display ? `<span style="color:#6b7280;">(${escapeHtml(item.fecha_ultimo_tomo_display)})</span>` : ''}
 				</div>
 				${reasonHtml}
@@ -23369,7 +23355,7 @@ window.ykzRadarData = {
 	// EVENT LISTENERS
 	// -------------------------------------------------------------
 
-	// BÃºsqueda en tiempo real con debounce
+	// Búsqueda en tiempo real con debounce
 	let searchTimeout = null;
 	if (searchInput) {
 		searchInput.addEventListener('input', function () {
@@ -23402,7 +23388,7 @@ window.ykzRadarData = {
 		});
 	}
 
-	// Cambio de pestaÃ±a
+	// Cambio de pestaña
 	tabBtns.forEach((btn) => {
 		btn.addEventListener('click', function () {
 			tabBtns.forEach((b) => b.classList.remove('active'));
@@ -23412,12 +23398,12 @@ window.ykzRadarData = {
 		});
 	});
 
-	// BotÃ³n cargar mÃ¡s
+	// Botón cargar más
 	if (loadMoreBtn) {
 		loadMoreBtn.addEventListener('click', renderNextPage);
 	}
 
-	// Reset de bÃºsqueda
+	// Reset de búsqueda
 	if (resetBtn) {
 		resetBtn.addEventListener('click', function () {
 			searchQuery = '';
@@ -23433,7 +23419,7 @@ window.ykzRadarData = {
 		});
 	}
 
-	// Enlace suave al tutorial / guÃ­a de uso
+	// Enlace suave al tutorial / guía de uso
 	const guideBtn = document.querySelector('.ykz-radar-guide-btn');
 	if (guideBtn) {
 		guideBtn.addEventListener('click', function (e) {
@@ -23449,7 +23435,6 @@ window.ykzRadarData = {
 	applyFilters();
 
 })();
-
 
 </script>
 
